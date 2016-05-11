@@ -55,9 +55,9 @@
 		console.log("http://api.dev.tusoapp.com:8080/v1/wechat/js_ticket/" + base64encode(window.location.href));
 		$.ajax({
 			type: 'get',
-			url: "http://api.dev.tusoapp.com/v1/wechat/js_ticket/" + base64encode(window.location.href),
+			url: "http://api.dev.tusoapp.com:8080/v1/wechat/js_ticket/" + base64encode(window.location.href),
 			success: function(data) {
-				console.log(data);
+				alert(data);
 				wx.config({
 					debug: true,
 					appId: 'wx20c8ac8d666eae20', // 必填，公众号的唯一标识
@@ -74,7 +74,7 @@
 				});
 			},
 			error: function(data) {
-				console.log(data)
+				alert(data)
 			}
 		});
 	</script>
