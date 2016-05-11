@@ -52,7 +52,7 @@
 			}
 			return out;
 		}
-		console.log("http://api.dev.tusoapp.com:8080/v1/wechat/js_ticket/" + base64encode(window.location.href));
+		alert("http://api.dev.tusoapp.com:8080/v1/wechat/js_ticket/" + base64encode(window.location.href));
 		$.ajax({
 			type: 'get',
 			url: "http://api.dev.tusoapp.com:8080/v1/wechat/js_ticket/" + base64encode(window.location.href),
