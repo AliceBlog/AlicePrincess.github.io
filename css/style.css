@@ -45,9 +45,39 @@ html,body{
 	width: 86%;
 	margin: auto;
 	background-color:rgba(255,255,255,0.1);
-	height: 200vw;
 	position: relative;
 	top: 5em;
+}
+table{
+	width: 100%;
+	border-collapse: collapse; 
+border: none; 
+text-align: center;
+}
+table tr{
+	border-bottom: 1px solid #ccc;
+}
+table tr td{
+	width: 10%;
+   padding: 1em 0 1em 0;
+	
+}
+table div{
+	width: 80%;
+	margin: auto;
+	text-align: left;
+}
+table tr td:nth-child(1),table tr td:nth-child(2){
+	border-right: 1px solid #888;
+}
+table tr th:nth-child(1),table tr th:nth-child(2){
+	border-right: 1px solid #888;
+}
+th{
+	font-size: 1.5em;
+}
+table td img{
+	max-width: 80%;
 }
 /*.menuLayer{
 	position: absolute;
