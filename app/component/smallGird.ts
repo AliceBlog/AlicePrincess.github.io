@@ -3,13 +3,10 @@ import { Router } from 'angular2/router';
 import { Classification } from '../data/classification';
 import {ListService} from "../service/classListService";
 
-import {numberPipe} from "../pipe/numberFilter";
-
 import { MoudleComponent } from './moudle';
 
 @Component({
   selector: 'small-gird',
-  pipes:[numberPipe],
   templateUrl: 'app/component/smallGird.html',
   styleUrls:  ['app/component/smallGird.scss'],
   directives: [MoudleComponent]

@@ -12,5 +12,5 @@ import {typographyPipe} from "../pipe/typography";
 export class MoudleComponent {
 // @Input() menus;
 
-
+random=Math.floor(Math.random()*7+1);
 }
