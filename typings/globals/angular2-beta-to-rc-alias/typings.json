@@ -1,0 +1,8 @@
+{
+  "resolution": "main",
+  "tree": {
+    "src": "/Users/mengzhuwu/angular2-webpack-starter/node_modules/@angularclass/angular2-beta-to-rc-alias/src/beta-17/typings.d.ts",
+    "raw": "file:./node_modules/@angularclass/angular2-beta-to-rc-alias/src/beta-17/typings.d.ts",
+    "typings": "/Users/mengzhuwu/angular2-webpack-starter/node_modules/@angularclass/angular2-beta-to-rc-alias/src/beta-17/typings.d.ts"
+  }
+}
