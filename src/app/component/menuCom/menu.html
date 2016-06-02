@@ -1,7 +1,19 @@
-<div class="box" *ngFor="let smallGird of smallGirdLists">
+
+<div [ngStyle]="{'width': (menuNum+1)*140+'px'}">
+<span class="menuList">
+<div class="box" *ngFor="let smallGird of smallGirdLists" (click)="showNextMenu(smallGird.menu,1)">
+  <i class="icon iconfont menuListIcon">&#xe6ac;</i>
   {{smallGird.name}}
-  {{smallGird.menu.length>0}}
-<div *ngIf="smallGird.menu.length>0" style="position:relative;left:20px">
-<menu-list [smallGirdLists]="smallGird.menu"></menu-list>
+<!-- <div *ngIf="smallGird.menu.length>0">
+  {{secondMenuLists}} -->
+<!-- <menu-list [smallGirdLists]="secondMenuLists"></menu-list> -->
+<!-- </div> -->
 </div>
+</span>
+<span class="menuList" *ngFor="let menus of menuArray let i = index">
+<div class="box" *ngFor="let smallGird of menus" (click)="showNextMenu(smallGird.menu,i+2)">
+  <i class="icon iconfont menuListIcon">&#xe6ac;</i>
+ {{smallGird.name}}
+</div>
+</span>
 </div>

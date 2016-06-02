@@ -12,7 +12,11 @@ directives: [forwardRef(() => MenuListComponent)],
 })
 
 
-export class MenuListComponent {}
+export class MenuListComponent {
+  ngOnInit() {
+    console.log("into");
+  }
+}
 
 @Component({
   selector: 'menu',
@@ -25,15 +29,37 @@ export class MenuListComponent {}
 
 export class MenuComponent implements OnInit {
   smallGirdLists: Classification[];
+  menuArray=[];
+  menuNum:number;
   constructor(
 
     private listService: ListService) { }
     getLists() {
       this.listService.getLists().then(
         smallGirdLists => this.smallGirdLists = smallGirdLists
+
       );
+
     }
-  ngOnInit() {
-  this.getLists();
-  }
+    ngOnInit() {
+        this.getLists();
+    }
+
+    showNextMenu(data, num) {
+      this.menuNum=num;
+        if (num == 1) {
+            this.menuArray[1] = [];
+            this.menuArray[2]  = [];
+            this.menuArray[0]  = data;
+
+        } else if (num == 2) {
+            this.menuArray[2]= [];
+            this.menuArray[1]= data;
+        } else if (num == 3) {
+            this.menuArray[2]= data;
+        }
+        else if (num == 4) {
+            this.menuArray[3]= data;
+        }
+    }
 }

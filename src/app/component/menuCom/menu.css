@@ -1,0 +1,20 @@
+.box{
+  /*margin: 1em;*/
+  border-bottom: 1px #fff solid;
+  /*padding: 1em;*/
+  width: 100px;
+  text-align: center;
+
+  margin: 1em 0 1em 0;
+  padding: 1em 0 1em 0;
+  margin-left: 20px;
+}
+.menuList{
+  position: relative;
+  float: left;
+  top: 0;
+  width: 140px;
+}
+.menuListIcon{
+  font-size: 1.2em;
+}
