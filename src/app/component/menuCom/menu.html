@@ -1,0 +1,7 @@
+<div class="box" *ngFor="let smallGird of smallGirdLists">
+  {{smallGird.name}}
+  {{smallGird.menu.length>0}}
+<div *ngIf="smallGird.menu.length>0" style="position:relative;left:20px">
+<menu-list [smallGirdLists]="smallGird.menu"></menu-list>
+</div>
+</div>

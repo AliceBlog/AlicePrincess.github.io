@@ -14,12 +14,6 @@
 -webkit-animation: title1 4s infinite linear;
 top: -2px
 }
-/*.smallBox:nth-child(2n):hover{
--webkit-transform: rotate(3deg);
-}
-.smallBox:nth-child(2n+1):hover{
--webkit-transform: rotate(-3deg);
-}*/
 
 @-webkit-keyframes title1 {
  0% {

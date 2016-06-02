@@ -42,3 +42,9 @@ button{
   height: 100%;
   overflow: auto;
 }
+.menuBar{
+  position: fixed;
+  top: 5em;
+  left: 0;
+  height: 100%;
+}

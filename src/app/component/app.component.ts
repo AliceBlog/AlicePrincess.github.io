@@ -9,6 +9,7 @@ import { AppState } from '../service/app.service';
 // import { Home } from './home';
 import { SmallGirdComponent } from './metro/smallGird';
 import { RouterActive } from '../router-active';
+import { MenuComponent } from './menuCom/menu';
 
 /*
  * App Component
@@ -16,15 +17,15 @@ import { RouterActive } from '../router-active';
  */
 @Component({
   selector: 'app',
-  pipes: [ ],
-  providers: [ListService ],
-  directives: [ RouterActive ],
+  pipes: [],
+  providers: [ListService],
+  directives: [RouterActive,MenuComponent],
   encapsulation: ViewEncapsulation.None,
   styles: [require('./app.css')],
   template: require('./app.html')
 })
 @RouteConfig([
-  { path: '/',      name: 'Index', component: SmallGirdComponent, useAsDefault: true },
+  { path: '/',name: 'Index', component: SmallGirdComponent, useAsDefault: true },
   // { path: '/home',  name: 'Home',  component: Home },
   // // Async load a component using Webpack's require with es6-promise-loader and webpack `require`
   // { path: '/about', name: 'About', loader: () => require('es6-promise!./about')('About') }
