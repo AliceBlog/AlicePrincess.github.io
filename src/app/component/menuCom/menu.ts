@@ -46,7 +46,7 @@ export class MenuComponent implements OnInit {
     }
 
     showNextMenu(data, num) {
-      this.menuNum=num;
+
         if (num == 1) {
             this.menuArray[1] = [];
             this.menuArray[2]  = [];
@@ -60,6 +60,12 @@ export class MenuComponent implements OnInit {
         }
         else if (num == 4) {
             this.menuArray[3]= data;
+        }
+        if(num == 4){
+
+        }else{
+
+          this.menuNum=num;
         }
     }
 }

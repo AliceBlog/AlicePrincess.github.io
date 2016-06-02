@@ -301,7 +301,6 @@ webpackJsonp([2],{
 	        this.getLists();
 	    };
 	    MenuComponent.prototype.showNextMenu = function (data, num) {
-	        this.menuNum = num;
 	        if (num == 1) {
 	            this.menuArray[1] = [];
 	            this.menuArray[2] = [];
@@ -316,6 +315,11 @@ webpackJsonp([2],{
 	        }
 	        else if (num == 4) {
 	            this.menuArray[3] = data;
+	        }
+	        if (num == 4) {
+	        }
+	        else {
+	            this.menuNum = num;
 	        }
 	    };
 	    MenuComponent = __decorate([
