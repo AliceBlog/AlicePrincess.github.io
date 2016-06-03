@@ -6,10 +6,10 @@ import {Pipe} from '@angular/core';
 export class typographyPipe {
     transform(value, data) {
         var col = 3;
-        if (document.documentElement.clientHeight < 1200) {
+        if (document.documentElement.clientHeight < 1000) {
             col = 3
         } else
-            if (document.documentElement.clientHeight < 1400) {
+            if (document.documentElement.clientHeight < 1200) {
                 col = 4
             }
             else if (1200 < document.documentElement.clientHeight) {
@@ -61,10 +61,16 @@ export class typographyPipe {
                 newValue.four[i].type = "large"
             }
         }
+
         if (colNum % 2 == 1) {
             newValue.first[colNum - 1].type = "small";
             if (value.length % 3 == 0) {
                 newValue.third[colNum - 1].type = "small";
+                for (var i = 0; i < newValue.five.length; i++) {
+                    if (newValue.five[i]!=[]) {
+                        newValue.five[colNum - 1].type = "small"
+                    }
+                }
             }
 
         }
