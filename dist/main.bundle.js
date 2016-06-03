@@ -7,19 +7,19 @@ webpackJsonp([2],{
 	/*
 	 * Providers provided by Angular
 	 */
-	var platform_browser_dynamic_1 = __webpack_require__(289);
+	var platform_browser_dynamic_1 = __webpack_require__(287);
 	/*
 	* Platform and Environment
 	* our providers/directives/pipes
 	*/
-	var browser_1 = __webpack_require__(360);
-	var environment_1 = __webpack_require__(363);
+	var browser_1 = __webpack_require__(358);
+	var environment_1 = __webpack_require__(361);
 	var http_1 = __webpack_require__(180);
 	/*
 	* App Component
 	* our top level component that holds all of our components
 	*/
-	var app_1 = __webpack_require__(355);
+	var app_1 = __webpack_require__(353);
 	/*
 	 * Bootstrap our Angular app with a top level component `App` and inject
 	 * our Services and Providers into Angular's dependency injection
@@ -174,7 +174,7 @@ webpackJsonp([2],{
 
 	"use strict";
 	var core_1 = __webpack_require__(1);
-	var mock_classes_1 = __webpack_require__(354);
+	var mock_classes_1 = __webpack_require__(352);
 	var ListService = (function () {
 	    function ListService() {
 	    }
@@ -200,21 +200,7 @@ webpackJsonp([2],{
 
 /***/ },
 
-/***/ 220:
-/***/ function(module, exports) {
-
-	module.exports = ".box{\n  /*margin: 1em;*/\n  border-bottom: 1px #fff solid;\n  /*padding: 1em;*/\n  width: 100px;\n  text-align: center;\n\n  margin: 1em 0 1em 0;\n  padding: 1em 0 1em 0;\n  margin-left: 20px;\n}\n.menuList{\n  position: relative;\n  float: left;\n  top: 0;\n  width: 140px;\n}\n.menuListIcon{\n  font-size: 1.2em;\n}\n"
-
-/***/ },
-
-/***/ 221:
-/***/ function(module, exports) {
-
-	module.exports = "\n<div [ngStyle]=\"{'width': (menuNum+1)*140+'px'}\">\n<span class=\"menuList\">\n<div class=\"box\" *ngFor=\"let smallGird of smallGirdLists\" (click)=\"showNextMenu(smallGird.menu,1)\">\n  <i class=\"icon iconfont menuListIcon\">&#xe6ac;</i>\n  {{smallGird.name}}\n<!-- <div *ngIf=\"smallGird.menu.length>0\">\n  {{secondMenuLists}} -->\n<!-- <menu-list [smallGirdLists]=\"secondMenuLists\"></menu-list> -->\n<!-- </div> -->\n</div>\n</span>\n<span class=\"menuList\" *ngFor=\"let menus of menuArray let i = index\">\n<div class=\"box\" *ngFor=\"let smallGird of menus\" (click)=\"showNextMenu(smallGird.menu,i+2)\">\n  <i class=\"icon iconfont menuListIcon\">&#xe6ac;</i>\n {{smallGird.name}}\n</div>\n</span>\n</div>\n"
-
-/***/ },
-
-/***/ 350:
+/***/ 348:
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -226,9 +212,9 @@ webpackJsonp([2],{
 	var classListService_1 = __webpack_require__(137);
 	var app_service_1 = __webpack_require__(136);
 	// import { Home } from './home';
-	var smallGird_1 = __webpack_require__(353);
-	var router_active_1 = __webpack_require__(357);
-	var menu_1 = __webpack_require__(351);
+	var smallGird_1 = __webpack_require__(351);
+	var router_active_1 = __webpack_require__(355);
+	var menu_1 = __webpack_require__(349);
 	/*
 	 * App Component
 	 * Top Level Component
@@ -248,8 +234,8 @@ webpackJsonp([2],{
 	            providers: [classListService_1.ListService],
 	            directives: [router_active_1.RouterActive, menu_1.MenuComponent],
 	            encapsulation: core_1.ViewEncapsulation.None,
-	            styles: [__webpack_require__(364)],
-	            template: __webpack_require__(365)
+	            styles: [__webpack_require__(362)],
+	            template: __webpack_require__(363)
 	        }),
 	        router_deprecated_1.RouteConfig([
 	            { path: '/', name: 'Index', component: smallGird_1.SmallGirdComponent, useAsDefault: true },
@@ -263,31 +249,12 @@ webpackJsonp([2],{
 
 /***/ },
 
-/***/ 351:
+/***/ 349:
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var core_1 = __webpack_require__(1);
 	var classListService_1 = __webpack_require__(137);
-	var MenuListComponent = (function () {
-	    function MenuListComponent() {
-	    }
-	    MenuListComponent.prototype.ngOnInit = function () {
-	        console.log("into");
-	    };
-	    MenuListComponent = __decorate([
-	        core_1.Component({
-	            selector: 'menu-list',
-	            styles: [__webpack_require__(220)],
-	            template: __webpack_require__(221),
-	            inputs: ['smallGirdLists'],
-	            directives: [core_1.forwardRef(function () { return MenuListComponent; })],
-	        }), 
-	        __metadata('design:paramtypes', [])
-	    ], MenuListComponent);
-	    return MenuListComponent;
-	}());
-	exports.MenuListComponent = MenuListComponent;
 	var MenuComponent = (function () {
 	    function MenuComponent(listService) {
 	        this.listService = listService;
@@ -301,33 +268,24 @@ webpackJsonp([2],{
 	        this.getLists();
 	    };
 	    MenuComponent.prototype.showNextMenu = function (data, num) {
-	        if (num == 1) {
-	            this.menuArray[1] = [];
-	            this.menuArray[2] = [];
-	            this.menuArray[0] = data;
-	        }
-	        else if (num == 2) {
-	            this.menuArray[2] = [];
-	            this.menuArray[1] = data;
-	        }
-	        else if (num == 3) {
-	            this.menuArray[2] = data;
-	        }
-	        else if (num == 4) {
-	            this.menuArray[3] = data;
-	        }
-	        if (num == 4) {
+	        if (data.length != 0) {
+	            this.menuNum = num;
 	        }
 	        else {
-	            this.menuNum = num;
+	            this.menuNum = num - 1;
+	        }
+	        this.menuArray[num - 1] = data;
+	        for (var i = 0; i < this.menuArray.length; i++) {
+	            if (i > num - 1) {
+	                this.menuArray[i] = [];
+	            }
 	        }
 	    };
 	    MenuComponent = __decorate([
 	        core_1.Component({
 	            selector: 'menu',
-	            styles: [__webpack_require__(220)],
-	            template: __webpack_require__(221),
-	            directives: [core_1.forwardRef(function () { return MenuListComponent; })],
+	            styles: [__webpack_require__(364)],
+	            template: __webpack_require__(365),
 	            inputs: ['smallGirdLists']
 	        }), 
 	        __metadata('design:paramtypes', [classListService_1.ListService])
@@ -339,12 +297,12 @@ webpackJsonp([2],{
 
 /***/ },
 
-/***/ 352:
+/***/ 350:
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var core_1 = __webpack_require__(1);
-	var typography_1 = __webpack_require__(356);
+	var typography_1 = __webpack_require__(354);
 	var MoudleComponent = (function () {
 	    function MoudleComponent() {
 	        // @Input() menus;
@@ -367,13 +325,13 @@ webpackJsonp([2],{
 
 /***/ },
 
-/***/ 353:
+/***/ 351:
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var core_1 = __webpack_require__(1);
 	var classListService_1 = __webpack_require__(137);
-	var moudle_1 = __webpack_require__(352);
+	var moudle_1 = __webpack_require__(350);
 	var SmallGirdComponent = (function () {
 	    function SmallGirdComponent(listService) {
 	        this.listService = listService;
@@ -402,7 +360,7 @@ webpackJsonp([2],{
 
 /***/ },
 
-/***/ 354:
+/***/ 352:
 /***/ function(module, exports) {
 
 	"use strict";
@@ -442,7 +400,7 @@ webpackJsonp([2],{
 
 /***/ },
 
-/***/ 355:
+/***/ 353:
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -450,7 +408,7 @@ webpackJsonp([2],{
 	    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
 	}
 	// App
-	__export(__webpack_require__(350));
+	__export(__webpack_require__(348));
 	__export(__webpack_require__(136));
 	var app_service_2 = __webpack_require__(136);
 	// Application wide providers
@@ -483,7 +441,7 @@ webpackJsonp([2],{
 
 /***/ },
 
-/***/ 356:
+/***/ 354:
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -566,7 +524,7 @@ webpackJsonp([2],{
 
 /***/ },
 
-/***/ 357:
+/***/ 355:
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -574,12 +532,12 @@ webpackJsonp([2],{
 	    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
 	}
 	// Application level directive
-	__export(__webpack_require__(358));
+	__export(__webpack_require__(356));
 	
 
 /***/ },
 
-/***/ 358:
+/***/ 356:
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -654,7 +612,7 @@ webpackJsonp([2],{
 
 /***/ },
 
-/***/ 359:
+/***/ 357:
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
@@ -673,21 +631,21 @@ webpackJsonp([2],{
 
 /***/ },
 
-/***/ 360:
+/***/ 358:
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	function __export(m) {
 	    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
 	}
+	__export(__webpack_require__(357));
 	__export(__webpack_require__(359));
-	__export(__webpack_require__(361));
-	__export(__webpack_require__(362));
+	__export(__webpack_require__(360));
 	
 
 /***/ },
 
-/***/ 361:
+/***/ 359:
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
@@ -704,7 +662,7 @@ webpackJsonp([2],{
 
 /***/ },
 
-/***/ 362:
+/***/ 360:
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
@@ -729,7 +687,7 @@ webpackJsonp([2],{
 
 /***/ },
 
-/***/ 363:
+/***/ 361:
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -751,24 +709,38 @@ webpackJsonp([2],{
 
 /***/ },
 
-/***/ 364:
+/***/ 362:
 /***/ function(module, exports) {
 
-	module.exports = "body,html{\n  margin: 0;\n  padding: 0;\n  background-color: #333;\n  color: #eee;\n  height: 100%;\n}\narticle{\n       display: flex;\n        align-items: center;\n        justify-content: center;\n\n}\n\n.bar{\n  border-bottom: 1px solid #eee;\n  padding:0.5em 0 0.5em 2em;\n  position: fixed;\n  width: 100%;\n  z-index: 1000;\n}\n.login{\n  position: fixed;\n  right: 2em;\n  top: 2em;\n}\na{\n  color: #eee;\n}\nbutton{\n  position: fixed;\n  right: 2em;\n  top: 5em;\n  background: none;\n  border: 0;\n  color: #eee;\n  outline-style:none;\n}\n.all{\n  position: absolute;\n  left: 0;\n  top: 0;\n  width: 100%;\n  height: 100%;\n  overflow: auto;\n}\n.menuBar{\n  position: fixed;\n  background-color: #252525;\n  top: 5.5em;\n  left: 0;\n  height: 90.9%;\n  z-index: 110;\n}\n.menuBut{\n  position: fixed;\n  bottom:1em;\n  left: 1em;\n  font-size: 3em;\n  z-index: 100;\n}\nmenu{\n  padding: 0;\n  position: relative;\n}\n"
+	module.exports = ""
 
 /***/ },
 
-/***/ 365:
+/***/ 363:
 /***/ function(module, exports) {
 
 	module.exports = "<header class=\"bar\">\n  <h1>{{title}}</h1>\n  <!-- <img src=\"http://localhost:8080/img/bg1.png\"> -->\n  <div class=\"login\"><a>Login</a>/<a>Register</a></div>\n  <button>change style</button>\n</header>\n<i class=\"icon iconfont menuBut\">&#xe6ac;</i>\n<div class=\"menuBar\">\n\n<menu></menu>\n</div>\n<router-outlet></router-outlet>\n"
 
 /***/ },
 
+/***/ 364:
+/***/ function(module, exports) {
+
+	module.exports = ""
+
+/***/ },
+
+/***/ 365:
+/***/ function(module, exports) {
+
+	module.exports = "\n<div [ngStyle]=\"{'width': (menuNum+1)*140+'px'}\">\n<span class=\"menuList\">\n<div class=\"box\" *ngFor=\"let smallGird of smallGirdLists\" (click)=\"showNextMenu(smallGird.menu,1)\">\n  <i class=\"icon iconfont menuListIcon\">&#xe6ac;</i>\n  {{smallGird.name}}\n</div>\n</span>\n<span class=\"menuList\" *ngFor=\"let menus of menuArray let i = index\">\n<div class=\"box\" *ngFor=\"let smallGird of menus\" (click)=\"showNextMenu(smallGird.menu,i+2)\">\n  <i class=\"icon iconfont menuListIcon\">&#xe6ac;</i>\n {{smallGird.name}}\n</div>\n</span>\n</div>\n"
+
+/***/ },
+
 /***/ 366:
 /***/ function(module, exports) {
 
-	module.exports = ".smallBox {\n    display: inline-block;\n    width: 200px;\n    padding: 40px 0;\n    text-align: center;\n    margin: 3px;\n    position: relative;\n    box-shadow: 0 1px 50px 1px #111;\n}\n.small {\n    width: 100px;\n}\n.smallBox:hover{\n-webkit-animation: title1 4s infinite linear;\ntop: -2px\n}\n\n@-webkit-keyframes title1 {\n 0% {\n   box-shadow: 0 1px 10px 3px #111;\n }\n\n 50% {\n   box-shadow: 0 1px 3px 3px #fff;\n }\n\n 100% {\n   box-shadow: 0 1px 10px 3px #111;\n }\n}\n.box {\n    padding: 10px;\n    height: auto;\n}\n\n.type1 .smallBox{\n    background-color: #006ac1;\n}\n.type2 .smallBox{\n    background-color: #78ba00;\n}\n.type3 .smallBox{\n    background-color: #7200ac;\n}\n.type4 .smallBox{\n    background-color: #D39d09;\n}\n.type5 .smallBox{\n    background-color: #c1004f;\n}\n.type6 .smallBox{\n    background-color: #78ba00;\n}\n.type7 .smallBox{\n    background-color: #006ac1;\n}\n.type8 .smallBox{\n    background-color: #c1004f;\n}\n"
+	module.exports = ""
 
 /***/ },
 
@@ -782,7 +754,7 @@ webpackJsonp([2],{
 /***/ 368:
 /***/ function(module, exports) {
 
-	module.exports = "header{\n  border-bottom: 1px solid #fff;\n  min-width: 100px;\n  padding: 10px;\n}\n.box{\n  float: left;\n  height: auto;\n\n  margin-left: 50px;\n  margin-right: 50px;\n}\n.flex{\n  position: absolute;\n  width: auto;\n  height: 100%;\n  left: 0;\n  top: 0;\n}\n"
+	module.exports = ""
 
 /***/ },
 
@@ -847,7 +819,7 @@ webpackJsonp([2],{
 	}
 	exports.HmrState = HmrState;
 	
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(345)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(343)))
 
 /***/ },
 

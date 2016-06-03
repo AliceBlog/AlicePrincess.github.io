@@ -4,10 +4,6 @@
 <div class="box" *ngFor="let smallGird of smallGirdLists" (click)="showNextMenu(smallGird.menu,1)">
   <i class="icon iconfont menuListIcon">&#xe6ac;</i>
   {{smallGird.name}}
-<!-- <div *ngIf="smallGird.menu.length>0">
-  {{secondMenuLists}} -->
-<!-- <menu-list [smallGirdLists]="secondMenuLists"></menu-list> -->
-<!-- </div> -->
 </div>
 </span>
 <span class="menuList" *ngFor="let menus of menuArray let i = index">
