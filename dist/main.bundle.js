@@ -451,10 +451,10 @@ webpackJsonp([2],{
 	    }
 	    typographyPipe.prototype.transform = function (value, data) {
 	        var col = 3;
-	        if (document.documentElement.clientHeight < 730) {
+	        if (document.documentElement.clientHeight < 1200) {
 	            col = 3;
 	        }
-	        else if (document.documentElement.clientHeight < 1200) {
+	        else if (document.documentElement.clientHeight < 1400) {
 	            col = 4;
 	        }
 	        else if (1200 < document.documentElement.clientHeight) {
@@ -712,7 +712,7 @@ webpackJsonp([2],{
 /***/ 362:
 /***/ function(module, exports) {
 
-	module.exports = ""
+	module.exports = "body,html{\n  margin: 0;\n  padding: 0;\n  background-color: #333;\n  color: #eee;\n  height: 100%;\n}\narticle{\n       display: flex;\n        align-items: center;\n        justify-content: center;\n\n}\n\n.bar{\n  border-bottom: 1px solid #eee;\n  padding:0.5em 0 0.5em 2em;\n  position: fixed;\n  width: 100%;\n  z-index: 1000;\n}\n.login{\n  position: fixed;\n  right: 2em;\n  top: 2em;\n}\na{\n  color: #eee;\n}\nbutton{\n  position: fixed;\n  right: 2em;\n  top: 5em;\n  background: none;\n  border: 0;\n  color: #eee;\n  outline-style:none;\n}\n.all{\n  position: absolute;\n  left: 0;\n  top: 0;\n  width: 100%;\n  height: 100%;\n  overflow: auto;\n}\n.menuBar{\n  position: fixed;\n  background-color: #252525;\n  top: 5.5em;\n  left: 0;\n  height: 90.9%;\n  z-index: 110;\n}\n.menuBut{\n  position: fixed;\n  bottom:1em;\n  left: 1em;\n  font-size: 3em;\n  z-index: 100;\n}\nmenu{\n  padding: 0;\n  position: relative;\n}\n"
 
 /***/ },
 
@@ -726,7 +726,7 @@ webpackJsonp([2],{
 /***/ 364:
 /***/ function(module, exports) {
 
-	module.exports = ""
+	module.exports = ".box{\n  /*margin: 1em;*/\n  border-bottom: 1px #fff solid;\n  /*padding: 1em;*/\n  width: 100px;\n  text-align: center;\n\n  margin: 1em 0 1em 0;\n  padding: 1em 0 1em 0;\n  margin-left: 20px;\n}\n.menuList{\n  position: relative;\n  float: left;\n  top: 0;\n  width: 140px;\n}\n.menuListIcon{\n  font-size: 1.2em;\n}\n"
 
 /***/ },
 
@@ -740,7 +740,7 @@ webpackJsonp([2],{
 /***/ 366:
 /***/ function(module, exports) {
 
-	module.exports = ""
+	module.exports = ".smallBox {\n    display: inline-block;\n    width: 310px;\n    height: 150px;\nline-height: 150px;\n    /*padding: 40px 0;*/\n    text-align: center;\n    margin: 5px;\n    position: relative;\n    box-shadow: 0 1px 50px 1px #111;\n}\n.small {\n    width: 150px;\n    height: 150px;\n}\n.smallBox:hover{\n-webkit-animation: title1 4s infinite linear;\ntop: -2px\n}\n\n@-webkit-keyframes title1 {\n 0% {\n   box-shadow: 0 1px 10px 3px #111;\n }\n\n 50% {\n   box-shadow: 0 1px 3px 3px #fff;\n }\n\n 100% {\n   box-shadow: 0 1px 10px 3px #111;\n }\n}\n.box {\n    padding: 10px;\n    height: auto;\n}\n\n.type1 .smallBox{\n    background-color: #006ac1;\n}\n.type2 .smallBox{\n    background-color: #78ba00;\n}\n.type3 .smallBox{\n    background-color: #7200ac;\n}\n.type4 .smallBox{\n    background-color: #D39d09;\n}\n.type5 .smallBox{\n    background-color: #c1004f;\n}\n.type6 .smallBox{\n    background-color: #78ba00;\n}\n.type7 .smallBox{\n    background-color: #006ac1;\n}\n.type8 .smallBox{\n    background-color: #c1004f;\n}\n"
 
 /***/ },
 
@@ -754,7 +754,7 @@ webpackJsonp([2],{
 /***/ 368:
 /***/ function(module, exports) {
 
-	module.exports = ""
+	module.exports = "header{\n  border-bottom: 1px solid #fff;\n  min-width: 100px;\n  padding: 10px;\n}\n.box{\n  float: left;\n  height: auto;\n\n  margin-left: 50px;\n  margin-right: 50px;\n}\n.flex{\n  position: absolute;\n  width: auto;\n  height: 100%;\n  left: 0;\n  top: 0;\n}\n"
 
 /***/ },
 

@@ -6,10 +6,10 @@ import {Pipe} from '@angular/core';
 export class typographyPipe {
     transform(value, data) {
         var col = 3;
-        if (document.documentElement.clientHeight < 730) {
+        if (document.documentElement.clientHeight < 1200) {
             col = 3
         } else
-            if (document.documentElement.clientHeight < 1200) {
+            if (document.documentElement.clientHeight < 1400) {
                 col = 4
             }
             else if (1200 < document.documentElement.clientHeight) {
